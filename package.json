@@ -1,0 +1,19 @@
+{
+  "name": "musiFX",
+  "version": "0.0.1",
+  "description": "Exploring particle gameplay with music responsiveness",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "game",
+    "music"
+  ],
+  "author": "Michael John McClure",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^1.0.0",
+    "express": "^4.8.4"
+  }
+}
