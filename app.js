@@ -8,12 +8,12 @@ app.use(express.static(__dirname + '/public'));
 app.set("view engine", "ejs");
 
 app.get('/', function (req, res){
-  res.render('/musifx');
+  res.redirect('/musifx');
 });
 
-
-
-
+app.get('/musifx', function (req, res){
+  res.render('musifx');
+});
 
 
 
