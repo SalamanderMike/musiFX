@@ -16,8 +16,9 @@ window.requestAnimFrame = (function(){
 
 var canvas = (function(){
 
+  // Need a place to control some basic params
   var parameters = {
-
+    color: Math.floor(Math.random()* 360)
   };
 
   var canvas,
@@ -29,7 +30,27 @@ var canvas = (function(){
       lonelyParticle,
       particles = [];
 
-  function init(){
+  // Must define a particle
+  function Particle(id){
+    // make this persistant through functions, just in case we need it
+    self = this;
+
+    // Where the hell is this particle on the screen? Ah, x,y
+    // within the parameters of the window size
+    self.x = Math.floor(Math.random()*windowWidth);
+    self.y = Math.floor(Math.random()*windowHeight);
+
+    // and every dot needs somewhere to go
+    self.velocityX = Math.random() * 2 - 1;
+    self.velocityY = Math.random() * 2 - 1;
+
+    // Let's give the dot some color
+    self.hue = parameters.color;
+    // and yes, size matters
+    self.radius = 1;
+  }
+
+  function start(){
 
     // Create a canvas, put it into our document, make it 2 dimensional
     canvas = document.createElement("canvas");
@@ -52,9 +73,6 @@ var canvas = (function(){
     drawParticle(lonelyParticle);
   }
 
-function drawParticle(){
-
-}
 
 
 
@@ -62,7 +80,8 @@ function drawParticle(){
 
 
 
-  init();
+
+  start();
 })();
 
 
